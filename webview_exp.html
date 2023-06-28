@@ -11,7 +11,7 @@ function myFunction() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr);
+            alert(xhr.statusText);
         }
     }
     xhr.open('GET', 'file:///sdcard/Download/test.txt', true);
