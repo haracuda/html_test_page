@@ -11,7 +11,7 @@ function myFunction() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.status);
+            alert(xhr.getAllResponseHeaders);
         }
     }
     xhr.open('GET', 'file:///data/data/com.kasikorn.retail.mbanking.wap2/databases/google_analytics_v4.db', true);
